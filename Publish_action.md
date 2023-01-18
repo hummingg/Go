@@ -14,7 +14,7 @@
 
 根据视频哈希值判断视频是否与已发布视频重复，使用redis存储所有视频的哈希值。
 
-按年月日的目录组织视频文件。（优化：GFS、[minio](https://github.com/minio/minio)、[go-fastdfs](https://sjqzhang.github.io/go-fastdfs/usage.html#go)）
+按年月日的目录组织视频文件。（优化：GFS、[**minio**](https://github.com/minio/minio)、[go-fastdfs](https://sjqzhang.github.io/go-fastdfs/usage.html#go)）
 
 > ## YouTube 是如何存储如此巨大的数据量的呢？
 >
@@ -78,7 +78,7 @@ graph TB
 
 A[投稿] --> B(投稿接口)
 	B --> C{鉴权}
-	C --> D{title合法性校验}
+	C --> D{title合法性校验(长度)<br>视频data合法性校验(大小)}
 	D --> |yes| E{生成视频哈希值<br>检查视频是否重复}
 	D --> |no| Z(返回发布失败信息)
 	E --> |yes| F(截取封面<br>保存视频和封面<br>生成视频链接和封面链接)
