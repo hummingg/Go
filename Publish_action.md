@@ -14,6 +14,16 @@
 
 根据视频哈希值判断视频是否与已发布视频重复，使用redis存储所有视频的哈希值。
 
+按年月日的目录组织视频文件。（优化：GFS、minio、[go-fastdfs](https://sjqzhang.github.io/go-fastdfs/usage.html#go)）
+
+> ## YouTube 是如何存储如此巨大的数据量的呢？
+>
+> 视频会存储在谷歌数据中心的硬盘中。这些数据由 Google File System 和 BigTable 管理。
+>
+> GFS Google File System是谷歌开发的一个**分布式文件系统**，用于管理分布式环境中的大规模数据。
+>
+> BigTable是一个建立在 Google File System 上的低延迟分布式数据存储系统，用于处理分布在成千上万台机器上的 PB 级别的数据。60 多个谷歌产品都使用了它。
+
 <img src="media/publish_action.jpg" height="500" width="200" />
 
 
