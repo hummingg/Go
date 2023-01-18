@@ -51,7 +51,7 @@ CREATE TABLE `video`  (
   `cover_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '投稿封面',
   `favorite_count` bigint(0) NULL DEFAULT 0 COMMENT '点赞数',
   `comment_count` bigint(0) NULL DEFAULT 0 COMMENT '评论数',
-  `status` tinyint UNSIGNED ZEROFILL NOT NULL COMMENT '视频状态（0：已发布，1：已删除，2：审核中（冗余））',
+  `status` tinyint(1) UNSIGNED DEFAULT 2 NOT NULL COMMENT '视频状态（0：已发布，1：已删除，2：审核中（冗余））',
   `submit_time` timestamp DEFAULT CURRENT_TIMESTAMP COMMENT '提交时间',
   `publish_time` timestamp DEFAULT NULL COMMENT '发布时间（冗余）',
   `delete_time` timestamp DEFAULT NULL COMMENT '删除时间'
