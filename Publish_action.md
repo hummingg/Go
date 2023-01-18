@@ -14,7 +14,7 @@
 
 根据视频哈希值判断视频是否与已发布视频重复，使用redis存储所有视频的哈希值。
 
-<img src="media/publish_action.jpg" style="zoom:30%;" />
+<img src="media/publish_action.jpg" height="500" width="200" />
 
 
 
